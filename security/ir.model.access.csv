@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_aeroport_pilote,aeroport.pilote,model_aeroport_pilote,,1,1,1,1
+access_aeroport_equipage,aeroport.equipage,model_aeroport_equipage,,1,1,1,1
+access_aeroport_depart,aeroport.depart,model_aeroport_depart,,1,1,1,1

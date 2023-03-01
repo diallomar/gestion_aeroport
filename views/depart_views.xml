@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="aeroport_depart_action" model="ir.actions.act_window">
+        <field name="name">Depart</field>
+        <field name="res_model">aeroport.depart</field>
+        <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+              Nouveau Départ
+            </p>
+            
+        </field>
+    </record>
+
+    <record id="aeroport_depart_tree" model="ir.ui.view">
+        <field name="name">Depart</field>
+        <field name="model">aeroport.depart</field>
+        <field name="arch" type="xml">
+            <tree string="Départs Enregistrés">
+                <field name="date" />
+                <field name="pilote_id" />
+                <field name="copilote_id" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="aeroport_depart_form" model="ir.ui.view">
+        <field name="name">Depart</field>
+        <field name="model">aeroport.depart</field>
+        <field name="arch" type="xml">
+            <form string="Formulaire">
+                <sheet>      
+                    <group name="name" string="Formulaire pour un nouveau départ">
+                        <field name="date" />
+                        <field name="pilote_id" />
+                        <field name="copilote_id" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="aeroport_depart_search" model="ir.ui.view">
+        <field name="name">Depart</field>
+        <field name="model">aeroport.depart</field>
+        <field name="arch" type="xml">
+            <search string="Recherche">
+                <field name="date" />
+            </search>
+        </field>
+    </record>
+
+<menuitem
+    id="menu_aeroport_depart"
+    name="Départs"
+    action="aeroport_depart_action"
+    parent="menu_aeroport_root"
+    sequence="10"/>
+</odoo>

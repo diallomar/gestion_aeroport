@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="aeroport_equipage_action" model="ir.actions.act_window">
+        <field name="name">Membre Equipage</field>
+        <field name="res_model">aeroport.equipage</field>
+        <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+              Nouveau membre d'equipage
+            </p>
+            
+        </field>
+    </record>
+
+    <record id="aeroport_equipage_tree" model="ir.ui.view">
+        <field name="name">Membre Equipage</field>
+        <field name="model">aeroport.equipage</field>
+        <field name="arch" type="xml">
+            <tree string="Membres d'equipage">
+            <field name="num_social_secur" />
+            <field name="firstname" />
+            <field name="lastname" />
+            <field name="address" />
+            <field name="salary" />
+            <field name="civility" />
+            <field name="language" />
+            <field name="fonction" />                
+            </tree>
+        </field>
+    </record>
+
+    <record id="aeroport_equipage_form" model="ir.ui.view">
+        <field name="name">Membre Equipage</field>
+        <field name="model">aeroport.equipage</field>
+        <field name="arch" type="xml">
+            <form string="Formulaire">
+                <sheet>
+                <group name="name" string="Membre de l'equipage">
+                    
+                    <group>
+                        <field name="num_social_secur" />
+                        <field name="firstname" />
+                        <field name="lastname" />
+                        <field name="address" /> 
+                    </group>
+                    <group>
+                        <field name="civility" />
+                        <field name="language" />
+                        <field name="fonction" />     
+                        <field name="salary" /> 
+                    </group>
+                </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="aeroport_equipage_search" model="ir.ui.view">
+        <field name="name">Membre Equipage</field>
+        <field name="model">aeroport.equipage</field>
+        <field name="arch" type="xml">
+            <search string="Recherche">
+                <field name="num_social_secur" />
+                <field name="firstname" />
+                <field name="lastname" />
+                <field name="address" />
+                <field name="salary" />
+                <field name="civility" />
+                <field name="language" />
+                <field name="fonction" />       
+            </search>
+        </field>
+    </record>
+
+<menuitem
+    id="menu_aeroport_root"
+    name="Gestion Aeroport"
+    sequence="10"/>
+
+    <menuitem
+        id="menu_aeroport_equipage"
+        name="Membres Equipage"
+        action="aeroport_equipage_action"
+        parent="menu_aeroport_root"
+        sequence="10"/>
+
+</odoo>

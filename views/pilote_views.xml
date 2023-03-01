@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="aeroport_pilote_action" model="ir.actions.act_window">
+        <field name="name">Pilote</field>
+        <field name="res_model">aeroport.pilote</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+              Nouveau Pilote
+            </p>
+        </field>
+    </record>
+
+    <record id="aeroport_pilote_tree" model="ir.ui.view">
+        <field name="name">Pilote</field>
+        <field name="model">aeroport.pilote</field>
+        <field name="arch" type="xml">
+            <tree string="Pilotes">
+                <field name="num_social_secur" />
+                <field name="firstname" />
+                <field name="lastname" />
+                <field name="address" />
+                <field name="salary" />
+                <field name="civility" />
+                <field name="language" />
+                <field name="licence" />
+                <field name="depart_ids" />
+                <field name="depart1_ids" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="aeroport_pilote_form" model="ir.ui.view">
+        <field name="name">Pilote</field>
+        <field name="model">aeroport.pilote</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                <group name="name" string="Pilote">
+                    
+                    <group>
+                        <field name="num_social_secur" />
+                        <field name="firstname" />
+                        <field name="lastname" />
+                        <field name="address" />
+                    </group>
+                    <group>
+                        <field name="salary" />
+                        <field name="civility" />
+                        <field name="language" />
+                        <field name="licence" />
+                    </group>
+                </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="aeroport_pilote_search" model="ir.ui.view">
+        <field name="name">Pilote</field>
+        <field name="model">aeroport.pilote</field>
+        <field name="arch" type="xml">
+            <search string="Recherche">
+                <field name="num_social_secur" />
+                <field name="firstname" />
+                <field name="lastname" />
+                <field name="address" />
+                <field name="salary" />
+                <field name="civility" />
+                <field name="language" />
+                <field name="licence" />
+            </search>
+        </field>
+    </record>
+
+<menuitem
+        id="menu_aeroport_pilote"
+        name="Pilotes"
+        action="aeroport_pilote_action"
+        parent="menu_aeroport_root"
+        sequence="10"/>
+</odoo>
