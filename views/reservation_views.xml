@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <record id="aeroport_reservation_action" model="ir.actions.act_window">
+        <field name="name">Réservations</field>
+        <field name="res_model">aeroport.reservation</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Réservation de Place
+            </p>
+        </field>
+    </record>
+
+
+    <record id="aeroport_reservation_tree" model="ir.ui.view">
+        <field name="name">Réservations</field>
+        <field name="model">aeroport.reservation</field>
+        <field name="arch" type="xml">
+            <tree string="Reservations">
+                <field name="num_passager"/>
+                <field name="date_reservation"/>
+                <field name="date_emission"/>
+                <field name="numberOfPlace"/>
+                <field name="ticket_issued"/>
+                <field name="depart_id"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="reservation_view_form" model="ir.ui.view">
+        <field name="name">Réservations</field>
+        <field name="model">aeroport.reservation</field>
+        <field name="arch" type="xml">
+            <form string="Liste des reservations">
+                <sheet>
+                    <group name="name" string="Réservation pour un passager">
+                        <group>
+                        <field name="num_passager"/>
+                        <field name="depart_id"/>
+                        <field name="numberOfPlace"/>
+                    </group>
+                    <group>
+                        <field name="date_reservation"/>
+                        <field name="date_emission"/>
+                        <field name="ticket_issued"/>
+                    </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+<record id="aeroport_reservation_search" model="ir.ui.view">
+    <field name="name">Réservations</field>
+    <field name="model">aeroport.reservation</field>
+    <field name="arch" type="xml">
+        <search string="Recherche">
+            <field name="num_passager"/>
+                <field name="date_reservation"/>
+                <field name="date_emission"/>
+                <field name="numberOfPlace"/>
+                <field name="ticket_issued"/>
+                <field name="depart_id"/>
+        </search>
+    </field>
+</record>
+
+    <menuitem id="menu_aeroport_reservation" name="Reservations" action="aeroport_reservation_action"
+              parent="menu_aeroport_root" sequence="1"/>
+</odoo>

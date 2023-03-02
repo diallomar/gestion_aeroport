@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <record id="aeroport_avion_action" model="ir.actions.act_window">
+        <field name="name">Avions</field>
+        <field name="res_model">aeroport.avion</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Nouvel Avion
+            </p>
+        </field>
+    </record>
+
+    <record id="aeroport_avion_tree" model="ir.ui.view">
+        <field name="name">Avion</field>
+        <field name="model">aeroport.avion</field>
+        <field name="arch" type="xml">
+            <tree string="Avions">
+                <field name="immatriculation"/>
+                <field name="mark"/>
+                <field name="model"/>
+                <field name="numberOfPlace"/>
+                <field name="vol_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="aeroport_avion_form" model="ir.ui.view">
+        <field name="name">Avion</field>
+        <field name="model">aeroport.avion</field>
+        <field name="arch" type="xml">
+            <form string="Liste d'avion">
+                <sheet>
+                <group name="name" string="Enregistrement d'un nouvel Avion">
+                    <group>
+                        <field name="immatriculation"/>
+                        <field name="mark"/>
+                    </group>
+                    <group>
+                        <field name="numberOfPlace"/>
+                        <field name="model"/>
+                    </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+<record id="aeroport_avion_search" model="ir.ui.view">
+    <field name="name">Avions</field>
+    <field name="model">aeroport.avion</field>
+    <field name="arch" type="xml">
+        <search string="">
+            <field name="immatriculation"/>
+                <field name="mark"/>
+                <field name="model"/>
+                <field name="numberOfPlace"/>
+        </search>
+    </field>
+</record>
+
+    <menuitem id="menu_aeroport_avion" name="Avions" action="aeroport_avion_action"
+              parent="menu_aeroport_root" sequence="1"/>
+</odoo>

@@ -1,1 +1,1 @@
-from . import equipage, pilote, depart
+from . import equipage, pilote, depart, aeroport, avion, reservation, vol, passager, ligne

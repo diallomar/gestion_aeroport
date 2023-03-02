@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <record id="aeroport_aeroport_action" model="ir.actions.act_window">
+        <field name="name">Aéroports</field>
+        <field name="res_model">aeroport.aeroport</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Nouvel Aéroport
+            </p>
+        </field>
+    </record>
+
+    <record id="aeroport_aeroport_tree" model="ir.ui.view">
+        <field name="name">Aéroports</field>
+        <field name="model">aeroport.aeroport</field>
+        <field name="arch" type="xml">
+            <tree string="Aéroports">
+                <field name="name"/>
+                <field name="town"/>
+                <field name="country"/>
+                <field name="language"/>
+                <field name="ligne_ids"/>
+                <field name="ligne1_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="aeroport_view_form" model="ir.ui.view">
+        <field name="name">Aeroport</field>
+        <field name="model">aeroport.aeroport</field>
+        <field name="arch" type="xml">
+            <form string="Formulaire">
+                <sheet>
+                <group name="name" string="Enregistrement d'un nouveau aéroport">
+                    
+                    <group>
+                        <field name="name"/>
+                        <field name="town"/>
+                    </group>
+                    <group>
+                        <field name="country"/>
+                        <field name="language"/>
+                    </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="aeroport_aeroport_search" model="ir.ui.view">
+        <field name="name">Aéroport</field>
+        <field name="model">aeroport.aeroport</field>
+        <field name="arch" type="xml">
+            <search string="Recherche">
+                <field name="name"/>
+                <field name="town"/>
+                <field name="country"/>
+                <field name="language"/>
+            </search>
+        </field>
+    </record>
+
+    <menuitem id="menu_aeroport_aeroport" name="Aeroport" action="aeroport_aeroport_action"
+              parent="menu_aeroport_root" sequence="1"/>
+</odoo>

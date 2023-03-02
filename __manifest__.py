@@ -17,7 +17,13 @@ employés, des vols et des appareils, et d'autre part des clients et des billets
         'security/ir.model.access.csv',
         'views/equipage_views.xml',
         'views/pilote_views.xml',
-        'views/depart_views.xml'
+        'views/depart_views.xml',
+        'views/reservation_views.xml',
+        'views/passager_views.xml',
+        'views/vol_views.xml',
+        'views/ligne_views.xml',
+        'views/avion_views.xml',
+        'views/aeroport_views.xml'
     ],
     'demo': [
     ],

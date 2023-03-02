@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <record id="aeroport_ligne_action" model="ir.actions.act_window">
+        <field name="name">Trajets</field>
+        <field name="res_model">aeroport.ligne</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+               Nouveau Trajet
+            </p>
+        </field>
+    </record>
+
+    <record id="aeroport_ligne_tree" model="ir.ui.view">
+        <field name="name">Trajets</field>
+        <field name="model">aeroport.ligne</field>
+        <field name="arch" type="xml">
+            <tree string="Trajets">
+                <field name="aeroport_depart"/>
+                <field name="aeroport_arrivee"/>
+                <field name="active"/>
+                <field name="vol_ids" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="ligne_view_from" model="ir.ui.view">
+        <field name="name">Trajets</field>
+        <field name="model">aeroport.ligne</field>
+        <field name="arch" type="xml">
+            <form string="Liste des lignes">
+                <group name="name" string="Enregistrement d'un nouveau trajet">
+                    <group>
+                        <field name="aeroport_depart"/>
+                        <field name="aeroport_arrivee"/>
+                    </group>
+                    <group>
+                        <field name="vol_ids" />
+                        <field name="active"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="aeroport_ligne_search" model="ir.ui.view">
+        <field name="name">Trajet</field>
+        <field name="model">aeroport.ligne</field>
+        <field name="arch" type="xml">
+            <search string="Recherche">
+                <field name="aeroport_depart"/>
+                <field name="aeroport_arrivee"/>
+                <field name="active"/>
+            </search>
+        </field>
+    </record>
+
+    <menuitem id="menu_aeroport_ligne" name ='Trajets' action="aeroport_ligne_action"
+              parent="menu_aeroport_root" sequence="1"/>
+</odoo>

@@ -2,7 +2,7 @@
 <odoo>
 
     <record id="aeroport_depart_action" model="ir.actions.act_window">
-        <field name="name">Depart</field>
+        <field name="name">Départs</field>
         <field name="res_model">aeroport.depart</field>
         <field name="help" type="html">
         <p class="o_view_nocontent_smiling_face">
@@ -18,8 +18,12 @@
         <field name="arch" type="xml">
             <tree string="Départs Enregistrés">
                 <field name="date" />
+                <field name="vol_id" />
                 <field name="pilote_id" />
                 <field name="copilote_id" />
+                <field name="equipage_id" />
+                <field name="equipage1_id" />
+                <field name="reservation_ids" />
             </tree>
         </field>
     </record>
@@ -34,6 +38,9 @@
                         <field name="date" />
                         <field name="pilote_id" />
                         <field name="copilote_id" />
+                        <field name="vol_id" />
+                        <field name="equipage_id" />
+                        <field name="equipage1_id" />
                     </group>
                 </sheet>
             </form>

@@ -24,3 +24,7 @@ class Equipage(models.Model):
         ('Hotesse', 'Hotesse'),
         ('Stewart', 'Stewart')],
         string='Fonction')
+    depart_ids = fields.One2many(
+        'aeroport.depart', 'equipage_id', string='Membre Equipage 1')
+    depart1_ids = fields.One2many(
+        'aeroport.depart', 'equipage1_id', string='Membre Equipage 2')

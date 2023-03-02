@@ -2,3 +2,9 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_aeroport_pilote,aeroport.pilote,model_aeroport_pilote,,1,1,1,1
 access_aeroport_equipage,aeroport.equipage,model_aeroport_equipage,,1,1,1,1
 access_aeroport_depart,aeroport.depart,model_aeroport_depart,,1,1,1,1
+access_aeroport_reservation,aeroport.reservation,model_aeroport_reservation,,1,1,1,1
+access_aeroport_passager,aeroport.passager,model_aeroport_passager,,1,1,1,1
+access_aeroport_vol,aeroport.vol,model_aeroport_vol,,1,1,1,1
+access_aeroport_ligne,aeroport.ligne,model_aeroport_ligne,,1,1,1,1
+access_aeroport_avion,aeroport.avion,model_aeroport_avion,,1,1,1,1
+access_aeroport_aeroport,aeroport.aeroport,model_aeroport_aeroport,,1,1,1,1

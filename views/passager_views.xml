@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<odoo>
+    <record id="aeroport_passager_action" model="ir.actions.act_window">
+        <field name="name">Passager</field>
+        <field name="res_model">aeroport.passager</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Nouveau Passager
+            </p>
+        </field>
+    </record>
+
+    <record id="aeroport_passager_tree" model="ir.ui.view">
+        <field name="name">Passagers</field>
+        <field name="model">aeroport.passager</field>
+        <field name="arch" type="xml">
+            <tree string="Passagers">
+                <field name="num_passager"/>
+                <field name="firstName"/>
+                <field name="lastName"/>
+                <field name="phoneNumber"/>
+                <field name="address"/>
+                <field name="function"/>
+                <field name="reservation_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="passager_view_form" model="ir.ui.view">
+        <field name="name">Passagers</field>
+        <field name="model">aeroport.passager</field>
+        <field name="arch" type="xml">
+            <form string="Liste des passagers">
+                <sheet>
+                    <group name="name" string="Enregistrement d'un nouveau passager">
+                        <group>
+                        <field name="num_passager"/>
+                        <field name="firstName"/>
+                        <field name="lastName"/>
+                    </group>
+                    <group>
+                        <field name="phoneNumber"/>
+                        <field name="address"/>
+                        <field name="function"/>
+                    </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="model_name_view_search" model="ir.ui.view">
+        <field name="name">Passager</field>
+        <field name="model">aeroport.passager</field>
+        <field name="arch" type="xml">
+            <search string="Recherche">
+                <field name="num_passager"/>
+                <field name="firstName"/>
+                <field name="lastName"/>
+                <field name="phoneNumber"/>
+                <field name="address"/>
+                <field name="function"/>
+            </search>
+        </field>
+    </record>
+
+    <menuitem id="menu_aeroport_passager" name="Passagers" action="aeroport_passager_action"
+              parent="menu_aeroport_root" sequence="1"/>
+</odoo>

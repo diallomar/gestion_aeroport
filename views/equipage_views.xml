@@ -2,11 +2,11 @@
 <odoo>
 
     <record id="aeroport_equipage_action" model="ir.actions.act_window">
-        <field name="name">Membre Equipage</field>
+        <field name="name">Membres d'équipages</field>
         <field name="res_model">aeroport.equipage</field>
         <field name="help" type="html">
         <p class="o_view_nocontent_smiling_face">
-              Nouveau membre d'equipage
+              Nouveau membre de l'équipage
             </p>
             
         </field>
@@ -24,7 +24,9 @@
             <field name="salary" />
             <field name="civility" />
             <field name="language" />
-            <field name="fonction" />                
+            <field name="fonction" />     
+            <field name="depart_ids" />
+            <field name="depart1_ids" />           
             </tree>
         </field>
     </record>

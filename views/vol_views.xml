@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <record id="aeroport_vol_action" model="ir.actions.act_window">
+        <field name="name">Vols</field>
+        <field name="res_model">aeroport.vol</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+               Nouveau Vol
+            </p>
+        </field>
+    </record>
+    <record id="aeroport_vol_tree" model="ir.ui.view">
+        <field name="name">Vols</field>
+        <field name="model">aeroport.vol</field>
+        <field name="arch" type="xml">
+            <tree string="Vols">
+                <field name="number"/>
+                <field name="start_validity"/>
+                <field name="end_validity"/>
+                <field name="validity"/>
+                <field name="avion_id"/>
+                <field name="type_courier"/>
+                <field name="ligne_id"/> 
+                <field name="depart_ids"/>  
+            </tree>
+        </field>
+    </record>
+
+    <record id="vol_view_form" model="ir.ui.view">
+        <field name="name">Vols</field>
+        <field name="model">aeroport.vol</field>
+        <field name="arch" type="xml">
+            <form string="Liste des vols">
+                <sheet>
+                    <group name="name" string="Enregistrement d'un nouveau vol">
+                        <group>
+                        <field name="number"/>
+                        <field name="ligne_id"/>
+                        <field name="avion_id"/>
+                        <field name="type_courier"/>
+                    </group>
+
+                    <group>
+                        <field name="start_validity"/>
+                        <field name="end_validity"/>
+                        <field name="validity"/>
+                    </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="aeroport_vol_search" model="ir.ui.view">
+        <field name="name">Vols</field>
+        <field name="model">aeroport.vol</field>
+        <field name="arch" type="xml">
+            <search string="Recherche">
+                <field name="number"/>
+                <field name="start_validity"/>
+                <field name="end_validity"/>
+                <field name="validity"/>
+                <field name="avion_id"/>
+                <field name="type_courier"/>
+                <field name="ligne_id"/>   
+            </search>
+        </field>
+    </record>
+
+    <menuitem id="menu_aeroport_vol" name="Vols" action="aeroport_vol_action"
+              parent="menu_aeroport_root" sequence="1"/>
+</odoo>
