@@ -3,7 +3,7 @@
 
 <odoo>
     <record id="aeroport_passager_action" model="ir.actions.act_window">
-        <field name="name">Passager</field>
+        <field name="name">Passagers</field>
         <field name="res_model">aeroport.passager</field>
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
