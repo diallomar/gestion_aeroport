@@ -23,6 +23,7 @@
                 <field name="lastName"/>
                 <field name="phoneNumber"/>
                 <field name="address"/>
+                <field name="email" />
                 <field name="function"/>
                 <field name="reservation_ids"/>
             </tree>
@@ -44,6 +45,7 @@
                     <group>
                         <field name="phoneNumber"/>
                         <field name="address"/>
+                        <field name="email" />
                         <field name="function"/>
                     </group>
                     </group>
@@ -62,6 +64,7 @@
                 <field name="lastName"/>
                 <field name="phoneNumber"/>
                 <field name="address"/>
+                <field name="email" />
                 <field name="function"/>
             </search>
         </field>
