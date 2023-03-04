@@ -6,7 +6,7 @@ from odoo import models, fields, api
 
 class Equipage(models.Model):
     _name = 'aeroport.equipage'
-    num_social_secur = fields.Char(string='Securite Sociale')
+    num_social_secur = fields.Char(string='Securite Sociale', readonly=True)
     firstname = fields.Char(string='Prenom', required=True)
     lastname = fields.Char(string='Nom', required=True)
     address = fields.Char(string='Adresse')
@@ -31,7 +31,6 @@ class Equipage(models.Model):
         'aeroport.depart', 'equipage_id', string='Membre Equipage 1')
     depart1_ids = fields.One2many(
         'aeroport.depart', 'equipage1_id', string='Membre Equipage 2')
-
 
     def name_get(self):
         res = []
