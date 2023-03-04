@@ -1,30 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data noupdate="0">
-        <record id="email_template_module_tdsi" model="mail.template">
-            <field name="name">Professeurs</field>
+        <record id="message_depart" model="mail.template">
+            <field name="name">Notification de départ</field>
             <field name="email_from">"Diallo Info" &lt;consultationpatient@gmail.com&gt; </field>
-            <field name="email_to">{{object.email}}</field>
-            <field name="subject">Reunion</field>
-            <field name="model_id" ref="module_tdsi.model_module_tdsi_prof"/>
-
-            <!--  -->
-
+            <field name="email_to">{{ object.pilote_id.email }}</field>
+            <field name="subject">Nouveau départ</field>
+            <field name="model_id" ref="aeroport.model_aeroport_depart"/>
             <field name="auto_delete" eval="True"/>
-            <field name="body_html" type="html">
+            <field name="body_html">
+            <![CDATA[
+                <p>Bonjour ${ object.pilote_id.lastname },</p>
+                <p>Un nouveau départ a été créé pour le vol ${ object.vol_id.number }, le ${ object.date }.</p>
+                <p>Sur ce vous avez été pilote pour vol.</p>
+                <p>------------------------------------------------</p>
+                <p>Cordialement.</p>
+                
+                ]]>
+            </field>
             
-            <html>
-                <body>
-                    Ceci est un test d'envoi de mail.👍
-                </body>
-                </html>
-            
-             </field>
         </record>
-        
-    
     </data>
-    
-
 </odoo>
-

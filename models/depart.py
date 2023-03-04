@@ -13,7 +13,10 @@ class Depart(models.Model):
     reservation_ids = fields.One2many(
         'aeroport.reservation', 'depart_id', 'Décolage')
 
-    validity = fields.Boolean(string='validite')
+    # message_template_id = fields.Many2one(
+    #     'mail.template', string='Message Template')
+
+    # validity = fields.Boolean(string='validite')
 
     def name_get(self):
         res = []
@@ -22,14 +25,25 @@ class Depart(models.Model):
             res.append((depart.id, name))
         return res
 
-    @api.onchange('vol_id')
-    def get_validity(self):
-        val = self.env['aeroport.vol'].search([])
-        self.validity = val.validity
+    # @api.onchange('vol_id')
+    # def get_validity(self):
+    #     val = self.env['aeroport.vol'].search([])
+    #     self.validity = val.validity
 
-    # @api.model
-    # def create(self, vals):
-    #     # validit = self.env['aeroport.vol'].search([])
-    #     if self.validity == False:
-    #         return 'impossible de programmer un depart pour un vol desactive'
-    #     return super(Depart, self).create(vals)
+    @api.model
+    def create(self, vals):
+        depart = super(Depart, self).create(vals)
+
+        if depart.pilote_id:
+            template = self.env.ref('aeroport.message_depart')
+            self.env['mail.template'].browse(
+                template.id).sudo().send_mail(depart.id, force_send=True)
+            self.env['mail.mail'].sudo().process_email_queue()
+
+            # template.send_mail(depart.id, force_send=True, email_values={
+            #     'email_from': 'consultationpatient@gmail.com',
+            #     'email_to': depart.pilote_id.email,
+            #     'subject': 'Nouveau départ',
+            #     'body_html': 'Bonjour {},<br/>Un nouveau départ a été créé pour le vol {} du {} <br/>.'.format(depart.pilote_id.name, depart.vol_id.number, depart.date),
+            # })
+        return depart
