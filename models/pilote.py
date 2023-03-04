@@ -6,7 +6,7 @@ from odoo import models, fields, api
 class Pilote(models.Model):
     _name = 'aeroport.pilote'
     num_social_secur = fields.Char(
-        string='Numéro Sécurite Sociale', readonly=True)
+        string='Numéro Sécurite Sociale')
     firstname = fields.Char(string='Prenom')
     lastname = fields.Char(string='Nom', required=True)
     address = fields.Char(string='Adresse')

@@ -12,20 +12,6 @@ class Passager(models.Model):
     address = fields.Char(string='Adresse')
     email = fields.Char(string='Email')
     function = fields.Char(string='Profession')
+    email = fields.Char(string='Email')
     reservation_ids = fields.One2many(
         'aeroport.reservation', 'num_passager', string='Numéro du passager')
-
-    def name_get(self):
-        res = []
-        for passager in self:
-            name = 'Passager N° ' + passager.num_passager
-            res.append((passager.id, name))
-        return res
-
-    @api.model
-    def create(self, vals):
-        letters = string.ascii_uppercase + string.digits
-        mod1 = 'PASS'
-        rand1 = ''.join(random.choices(letters, k=10))
-        vals['num_passager'] = mod1+rand1
-        return super(Passager, self).create(vals)
