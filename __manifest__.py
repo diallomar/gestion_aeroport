@@ -23,7 +23,8 @@ employés, des vols et des appareils, et d'autre part des clients et des billets
         'views/vol_views.xml',
         'views/ligne_views.xml',
         'views/avion_views.xml',
-        'views/aeroport_views.xml'
+        'views/aeroport_views.xml',
+        'data/template_mail.xml'
     ],
     'demo': [
     ],

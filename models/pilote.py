@@ -7,7 +7,7 @@ class Pilote(models.Model):
     _name = 'aeroport.pilote'
     _rec_name = 'fullname'
     num_social_secur = fields.Char(
-        string='Numéro Sécurite Sociale', readonly=True)
+        string='Numéro Sécurite Sociale')
     firstname = fields.Char(string='Prenom')
     lastname = fields.Char(string='Nom')
     address = fields.Char(string='Adresse')
@@ -25,7 +25,7 @@ class Pilote(models.Model):
         ('Pulaar', 'Pulaar')],
         string='Langue',
         multiple=True)
-    licence = fields.Char(string='Licence', readonly=True)
+    licence = fields.Char(string='Licence')
 
     depart_ids = fields.One2many(
         'aeroport.depart', 'pilote_id', string='Pilote')

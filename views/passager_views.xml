@@ -25,6 +25,7 @@
                 <field name="address"/>
                 <field name="function"/>
                 <field name="reservation_ids"/>
+                <field name="email"/>
             </tree>
         </field>
     </record>
@@ -34,12 +35,16 @@
         <field name="model">aeroport.passager</field>
         <field name="arch" type="xml">
             <form string="Liste des passagers">
+                 <header>
+                    <button name="action_cours_send" string="Send by Email" type="object"  class="oe_highlight" />
+                </header>
                 <sheet>
                     <group name="name" string="Enregistrement d'un nouveau passager">
                         <group>
                         <field name="num_passager"/>
                         <field name="firstName"/>
                         <field name="lastName"/>
+                         <field name="email"/>
                     </group>
                     <group>
                         <field name="phoneNumber"/>
@@ -63,6 +68,7 @@
                 <field name="phoneNumber"/>
                 <field name="address"/>
                 <field name="function"/>
+                <field name="email"/>
             </search>
         </field>
     </record>
