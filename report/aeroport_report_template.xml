@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_aeroportpassager_document">
+        <t t-call="web.external_layout">
+            <div class = "page">
+                <h3 style = "color:blue" class = "text-center">Les informations du passager 
+                    <span t-field="o.firstName"/>
+                </h3>
+                <table class ="table table-sm o_main_table">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>
+                        Nom:
+                    </strong>
+                            </td>
+                            <td>
+                                <span t-field="o.lastName"/>
+                            </td>
+                        </tr>
+                        <tr>
+                        <td><strong>Prenom:</strong></td>
+                        <td><span t-field="o.firstName"/></td>
+                        </tr>
+                         <tr>
+                        <td><strong>Adresse:</strong></td>
+                        <td><span t-field="o.address"/></td>
+                        </tr>
+                         <tr>
+                        <td><strong>Telephone:</strong></td>
+                        <td><span t-field="o.phoneNumber"/></td>
+                        </tr>
+                         <tr>
+                        <td><strong>Profession:</strong></td>
+                        <td><span t-field="o.function"/></td>
+                        </tr>
+                        <tr>
+                        <td><strong>Date de reservation:</strong></td>
+                        <td><span t-field="o.reservation_ids.date_reservation"/></td>
+                        </tr>
+                         <tr>
+                        <td><strong>Date emission:</strong></td>
+                        <td><span t-field="o.reservation_ids.date_emission"/></td>
+                        </tr>
+                         <tr>
+                        <td><strong>Billet Emis:</strong></td>
+                        <td><span t-field="o.reservation_ids.ticket_issued"/></td>
+                        </tr>
+                        <tr>
+                        <td><strong>Numero de la place:</strong></td>
+                        <td><span t-field="o.reservation_ids.numberOfPlace"/></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+    <template id="report_aeroportpassager">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="gestion_aeroport.report_aeroportpassager_document">
+                    
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

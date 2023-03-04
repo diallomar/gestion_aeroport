@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+     <template id="report_aeroportpilote_document">
+        <t t-call="web.external_layout">
+            <div class = "page">
+                <h3 style = "color:blue" class = "text-center">Les informations du pilote 
+                    <span t-field="o.firstname"/>
+                </h3>
+                <table class ="table table-sm o_main_table">
+                    <tbody>
+                         <tr>
+                        <td><strong>Civilite:</strong></td>
+                        <td><span t-field="o.civilite"/></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>
+                        Nom:
+                    </strong>
+                            </td>
+                            <td>
+                                <span t-field="o.lastname"/>
+                            </td>
+                        </tr>
+                        <tr>
+                        <td><strong>Prenom:</strong></td>
+                        <td><span t-field="o.firstname"/></td>
+                        </tr>
+                         <tr>
+                        <td><strong>Adresse:</strong></td>
+                        <td><span t-field="o.address"/></td>
+                        </tr>
+                         <tr>
+                        <td><strong>Adresse:</strong></td>
+                        <td><span t-field="o.address"/></td>
+                        </tr>
+                         <tr>
+                        <td><strong>Adresse:</strong></td>
+                        <td><span t-field="o.address"/></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+    <template id="report_aeroportpilote">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="gestion_aeroport.report_aeroportpilote_document">
+                    
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

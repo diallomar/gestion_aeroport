@@ -15,8 +15,6 @@ class Passager(models.Model):
     reservation_ids = fields.One2many(
         'aeroport.reservation', 'num_passager', string='Numéro du passager')
 
-
-
     def name_get(self):
         res = []
         for passager in self:
