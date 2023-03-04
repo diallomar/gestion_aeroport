@@ -50,7 +50,6 @@
                     <group>
                         <field name="phoneNumber"/>
                         <field name="address"/>
-                        <field name="email" />
                         <field name="function"/>
                     </group>
                     </group>
