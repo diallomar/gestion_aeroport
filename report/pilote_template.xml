@@ -11,7 +11,7 @@
                     <tbody>
                          <tr>
                         <td><strong>Civilite:</strong></td>
-                        <td><span t-field="o.civilite"/></td>
+                        <td><span t-field="o.civility"/></td>
                         </tr>
                         <tr>
                             <td>
