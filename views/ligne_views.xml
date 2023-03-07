@@ -34,10 +34,11 @@
                     <group>
                         <field name="aeroport_depart"/>
                         <field name="aeroport_arrivee"/>
+                        <field name="active"/>
                     </group>
                     <group>
                         <field name="vol_ids" />
-                        <field name="active"/>
+                        
                     </group>
                 </group>
             </form>

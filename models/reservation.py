@@ -18,7 +18,6 @@ class Reservation(models.Model):
         ('cancel', 'Annulé'),
     ], string='Statut', default='draft')
 
-
     def name_get(self):
         res = []
         for reservation in self:
@@ -26,10 +25,10 @@ class Reservation(models.Model):
             res.append((reservation.id, name))
         return res
 
-
     def issue_ticket(self):
         for reservation in self:
             reservation.write({'state': 'issued', 'ticket_issued': True})
+
 
     @api.model
     def _issue_ticket(self, vals):

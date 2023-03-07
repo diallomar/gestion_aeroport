@@ -37,7 +37,7 @@
         <field name="arch" type="xml">
             <form string="Liste des passagers">
                  <header>
-                    <button name="action_cours_send" string="Send by Email" type="object"  class="oe_highlight" />
+                    <button name="action_cours_send" string="Envoyer un Email" type="object"  class="oe_highlight" />
                 </header>
                 <sheet>
                     <group name="name" string="Enregistrement d'un nouveau passager">
