@@ -1,68 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="report_aeroportpassager_document">
-        <t t-call="web.external_layout">
-            <div class = "page">
-                <h3 style = "color:blue" class = "text-center">Les informations du passager 
-                    <span t-field="o.firstName"/>
-                </h3>
-                <table class ="table table-sm o_main_table">
-                    <tbody>
-                        <tr>
-                            <td>
-                                <strong>
-                        Nom:
-                    </strong>
-                            </td>
-                            <td>
-                                <span t-field="o.lastName"/>
-                            </td>
-                        </tr>
-                        <tr>
-                        <td><strong>Prenom:</strong></td>
-                        <td><span t-field="o.firstName"/></td>
-                        </tr>
-                         <tr>
-                        <td><strong>Adresse:</strong></td>
-                        <td><span t-field="o.address"/></td>
-                        </tr>
-                         <tr>
-                        <td><strong>Telephone:</strong></td>
-                        <td><span t-field="o.phoneNumber"/></td>
-                        </tr>
-                         <tr>
-                        <td><strong>Profession:</strong></td>
-                        <td><span t-field="o.function"/></td>
-                        </tr>
-                        <tr>
-                        <td><strong>Date de reservation:</strong></td>
-                        <td><span t-field="o.reservation_ids.date_reservation"/></td>
-                        </tr>
-                         <tr>
-                        <td><strong>Date emission:</strong></td>
-                        <td><span t-field="o.reservation_ids.date_emission"/></td>
-                        </tr>
-                         <tr>
-                        <td><strong>Billet Emis:</strong></td>
-                        <td><span t-field="o.reservation_ids.ticket_issued"/></td>
-                        </tr>
-                        <tr>
-                        <td><strong>Numero de la place:</strong></td>
-                        <td><span t-field="o.reservation_ids.numberOfPlace"/></td>
-                        </tr>
+    <data>
+        <template id="report_aeroportpassager">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <div class="row mt32">
+                                <div class="col-12" style="margin-bottom:3em">
+                                    <h2 class='text-center'>Passager N°:
+                                        <t t-esc="o.num_passager"/>
+                                    </h2>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-bottom:3em">
+                                <div class="col-6">
+                                    <p>
+                                        <strong>Nom: </strong>
+                                        <t t-esc="o.lastName"/>
+                                    </p>
+                                    <p>
+                                        <strong>Prénom: </strong>
+                                        <t t-esc="o.firstName"/>
+                                    </p>
+                                    <p>
+                                        <strong>Numéro de téléphone: </strong>
+                                        <t t-esc="o.phoneNumber"/>
+                                    </p>
+                                    <p>
+                                        <strong>Adresse: </strong>
+                                        <t t-esc="o.address"/>
+                                    </p>
+                                </div>
+                                <div class="col-6">
+                                    <p>
+                                        <strong>Email: </strong>
+                                        <t t-esc="o.email"/>
+                                    </p>
+                                    <p>
+                                        <strong>Profession: </strong>
+                                        <t t-esc="o.function"/>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row mt32" >
+                                <div class="col-12">
+                                    <div class="text-center">
+                                        <h3><u>Réservations</u></h3>
+                                    </div>
 
-                    </tbody>
-                </table>
-            </div>
-        </t>
-    </template>
-    <template id="report_aeroportpassager">
-        <t t-call="web.html_container">
-            <t t-foreach="docs" t-as="o">
-                <t t-call="gestion_aeroport.report_aeroportpassager_document">
-                    
+                                    <div>
+                                        <table class="table table-condensed">
+                                            <thead>
+                                                <tr>
+                                                    <th>Date de réservation</th>
+                                                    <th>Date d'emission</th>
+                                                    <th>Numero de place</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <t t-foreach="o.reservation_ids" t-as="r">
+                                                    <tr>
+                                                        <td>
+                                                            <t t-esc="r.date_reservation"/>
+                                                        </td>
+                                                        <td>
+                                                            <t t-esc="r.date_emission"/>
+                                                        </td>
+                                                        <td>
+                                                            <t t-esc="r.numberOfPlace"/>
+                                                        </td>
+                                                    </tr>
+                                                </t>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="col-12">
+                                        <table class="table table-condensed">
+                                            <thead>
+                                                <tr>
+                                                    <th>Billets emis</th>
+                                                    <th>Numero de vol</th>
+                                                    <th>Date de depart</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <t t-foreach="o.reservation_ids" t-as="r">
+                                                    <tr>
+                                                        <td>
+                                                            <t t-esc="r.ticket_issued"/>
+                                                        </td>
+                                                        <td>
+                                                            <t t-esc="r.depart_id.vol_id.number"/>
+                                                        </td>
+                                                        <td>
+                                                        <t t-esc="r.depart_id.date"/>
+                                                    </td>
+                                                    </tr>
+                                                </t>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
                 </t>
             </t>
-        </t>
-    </template>
+        </template>
+    </data>
 </odoo>

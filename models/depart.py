@@ -26,7 +26,7 @@ class Depart(models.Model):
         depart = super(Depart, self).create(vals)
 
         if depart.pilote_id:
-            template = self.env.ref('aeroport.message_depart')
+            template = self.env.ref('gestion_aeroport.message_depart')
             self.env['mail.template'].browse(
                 template.id).sudo().send_mail(depart.id, force_send=True)
             self.env['mail.mail'].sudo().process_email_queue()
