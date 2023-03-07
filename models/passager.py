@@ -32,7 +32,7 @@ class Passager(models.Model):
         return super(Passager, self).create(vals)
 
     def action_cours_send(self):
-        template = self.env.ref('gestion_aeroport.email_template_aeroport')
+        template = self.env.ref('aeroport.email_template_aeroport')
         self.env['mail.template'].browse(
             template.id).sudo().send_mail(self.id, force_send=True)
         self.env['mail.mail'].sudo().process_email_queue()

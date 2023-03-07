@@ -6,8 +6,8 @@
         model = "aeroport.passager"
         report_type = "qweb-pdf"
         menu = "True"
-        name = "gestion_aeroport.report_aeroportpassager"
-        file = "gestion_aeroport.report_aeroportpassager"/>
+        name = "aeroport.report_aeroportpassager"
+        file = "aeroport.report_aeroportpassager"/>
 
     
 

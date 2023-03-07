@@ -6,12 +6,12 @@
             <field name="email_from">"Diallo Info" &lt;consultationpatient@gmail.com&gt; </field>
             <field name="email_to">{{ object.pilote_id.email }}</field>
             <field name="subject">Nouveau départ</field>
-            <!-- <field name="model_id" ref="aeroport.model_aeroport_depart"/> -->
+            <field name="model_id" ref="aeroport.model_aeroport_depart"/>
             <field name="auto_delete" eval="True"/>
             <field name="body_html">
             <![CDATA[
-                <p>Bonjour ${ object.pilote_id.lastname },</p>
-                <p>Un nouveau départ a été créé pour le vol ${ object.vol_id.number }, le ${ object.date }.</p>
+                <p>Bonjour ${{ object.pilote_id.lastname }},</p>
+                <p>Un nouveau départ a été créé pour le vol ${{ object.vol_id.number }}, le ${{ object.date }}.</p>
                 <p>Sur ce vous avez été pilote pour vol.</p>
                 <p>-----------------------------------------------------</p>
                 <p>Cordialement.</p>

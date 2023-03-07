@@ -5,8 +5,8 @@
         <field name="name">Details equipage</field>
         <field name="model">aeroport.equipage</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">gestion_aeroport.report_aeroportequipage</field>
-        <field name="report_file">gestion_aeroport.report_aeroportequipage</field>
+        <field name="report_name">aeroport.report_aeroportequipage</field>
+        <field name="report_file">aeroport.report_aeroportequipage</field>
         <field name="binding_model_id" ref="model_aeroport_equipage"/>
         <field name="binding_type">report</field>
     </record>
@@ -58,7 +58,7 @@
     <template id="report_aeroportequipage">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
-                <t t-call="gestion_aeroport.report_aeroportequipage_document">
+                <t t-call="aeroport.report_aeroportequipage_document">
                     
                 </t>
             </t>

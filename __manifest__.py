@@ -28,9 +28,10 @@ employés, des vols et des appareils, et d'autre part des clients et des billets
         'report/aeroport_report_template.xml',
         'report/aeroport_report.xml',
         'report/pilote_template.xml',
-        'report/pilote_report.xml',
+        # 'report/pilote_report.xml',
         'report/equipage_report.xml',
-        'data/template_mail.xml'
+        'report/equipage_template.xml',
+        'data/template_mail.xml',
     ],
     'demo': [
     ],

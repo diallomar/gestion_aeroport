@@ -24,6 +24,7 @@
                 <field name="numberOfPlace"/>
                 <field name="ticket_issued"/>
                 <field name="depart_id"/>
+                <field name="state" />
             </tree>
         </field>
     </record>
@@ -34,6 +35,10 @@
         <field name="model">aeroport.reservation</field>
         <field name="arch" type="xml">
             <form string="Liste des reservations">
+            <header>
+                <button name="issue_ticket" string="Émettre billet" state="waiting"
+                    type="object"/>
+            </header>
                 <sheet>
                     <group name="name" string="Réservation pour un passager">
                         <group>
@@ -66,6 +71,7 @@
         </search>
     </field>
 </record>
+
 
     <menuitem id="menu_aeroport_reservation" name="Reservations" action="aeroport_reservation_action"
               parent="menu_aeroport_root" sequence="1"/>

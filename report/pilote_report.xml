@@ -5,8 +5,8 @@
     <field name="name">Pilote details</field>
     <field name="model">aeroport.pilote</field>
     <field name="report_type">qweb-pdf</field>
-    <field name="report_name">gestion_aeroport.report_aeroportpilote</field>
-    <field name="report_file">gestion_aeroport.report_aeroportpilote</field>
+    <field name="report_name">aeroport.report_aeroportpilote</field>
+    <field name="report_file">aeroport.report_aeroportpilote</field>
     <field name="binding_model_id" ref="model_aeroport_pilote"/>
     <field name="binding_type">report</field>
    </record>
