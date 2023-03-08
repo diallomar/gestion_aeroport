@@ -23,8 +23,7 @@
         'data/template_auto_mail.xml',
         'report/aeroport_report_template.xml',
         'report/aeroport_report.xml',
-
-        'data/template_mail.xml',
+        'data/template_mail.xml'
     ],
     'demo': [
     ],
