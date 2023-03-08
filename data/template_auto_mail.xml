@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data noupdate="0">
+        
         <record id="message_depart" model="mail.template">
+            
             <field name="name">Notification de départ</field>
-            <field name="email_from">"Diallo Info" &lt;consultationpatient@gmail.com&gt; </field>
-            <field name="email_to">{{ object.pilote_id.email }}</field>
-            <field name="subject">Nouveau départ</field>
-            <field name="model_id" ref="aeroport.model_aeroport_depart"/>
-            <field name="auto_delete" eval="True"/>
-            <field name="body_html">
-            <![CDATA[
-                <p>Bonjour ${{ object.pilote_id.lastname }},</p>
-                <p>Un nouveau départ a été créé pour le vol ${{ object.vol_id.number }}, le ${{ object.date }}.</p>
-                <p>Sur ce vous avez été pilote pour vol.</p>
-                <p>-----------------------------------------------------</p>
-                <p>Cordialement.</p>
-                
-                ]]>
-            </field>
+            <field name="model_id" ref="model_aeroport_depart"/>
+            <field name="subject">Départ du vol N° {{object.vol_id.number}}</field>
+            <field name="email_from">"Airline Company" &lt;consultationpatient@gmail.com&gt; </field>
+            <field name="email_to">{{object.pilote_id.email}}, {{object.copilote_id.email}}, {{object.equipage_id.email}}, {{object.equipage1_id.email}}</field>
+            <field name="auto_delete" eval="False"/>
+            <field name="lang">${object.env.context.get('lang') or object.env.user.lang}</field>
+            <field name="body_html"><![CDATA[
+                <p>Bonjour Mr/Mme</p>
+                <p>Nous vous informons que le départ de ce vol est prévu pour le ${object.date | datetime_format('%d/%m/%Y %H:%M')}.</p>
+                <p>Le numéro de la porte d'embarquement sera communiqué à l'heure du départ.</p>
+                <p>Merci de bien vouloir être présent à l'aéroport au moins une heure avant l'heure de départ pour l'enregistrement et les formalités de sécurité.</p>
+                <p>Nous vous souhaitons un excellent vol !</p>
+                <p>Cordialement,<br/>L'équipe de l'aéroport.</p>
+            ]]></field>
             
         </record>
     </data>

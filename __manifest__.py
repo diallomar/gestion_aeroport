@@ -4,11 +4,7 @@
     'name': 'Gestion_aeroport',
     'version': '10.0.1',
     'description': '',
-    'summary': """Gestion Aeroport
-        ====================
-Ce module est implémenté pour une société aérienne qui voudrait gérer son système d'information pour une 
-meilleure gestion de son transport. L'objectif est d'assurer la gestion, d'une part des 
-employés, des vols et des appareils, et d'autre part des clients et des billets.
+    'summary': """Gestion d'une compagnie aérienne
         """,
     'category': 'Gestion',
     'images': [],
@@ -27,10 +23,7 @@ employés, des vols et des appareils, et d'autre part des clients et des billets
         'data/template_auto_mail.xml',
         'report/aeroport_report_template.xml',
         'report/aeroport_report.xml',
-        'report/pilote_template.xml',
-        # 'report/pilote_report.xml',
-        'report/equipage_report.xml',
-        'report/equipage_template.xml',
+
         'data/template_mail.xml',
     ],
     'demo': [

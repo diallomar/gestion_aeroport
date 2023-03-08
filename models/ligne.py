@@ -1,4 +1,5 @@
-from odoo import models, fields
+from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 
 class Ligne(models.Model):
@@ -15,3 +16,10 @@ class Ligne(models.Model):
             name = ligne.aeroport_depart.name + ' => ' + ligne.aeroport_arrivee.name
             res.append((ligne.id, name))
         return res
+
+    @api.constrains('aeroport_depart', 'aeroport_arrivee')
+    def _check_different_pilots(self):
+        for record in self:
+            if record.aeroport_arrivee and record.aeroport_depart and record.aeroport_arrivee == record.aeroport_depart:
+                raise ValidationError(
+                    "L'aeroport d'arrivée doit être de celle du départ.")
